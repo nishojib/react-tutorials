@@ -1,16 +1,35 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-setInterval(function() {
+// function Cartoon(props) {
+//     return <h1>Hello, {props.name}</h1>
+// }
 
-    let clock = function() {
-        return <h2>Time Now: { new Date().toLocaleTimeString() }</h2>
+class Cartoon extends React.Component {
+    render() {
+        return <h1>Hello, {this.props.name} {this.props.show}</h1>
     }
+}
 
-    ReactDOM.render(
-        clock(),
-        document.getElementById('root')
-    );
+// function Show() {
+//     return <div>
+//                 <Cartoon name='Pikachu' show='Pokemon' />
+//                 <Cartoon name='Jasmine' show='Alladin' />
+//             </div>
+// }
 
-}, 1000);
+class Show extends React.Component {
+    render() {
+        return <div>
+                    <Cartoon name='Pikachu' show='Pokemon' />
+                    <Cartoon name='Jasmine' show='Alladin' />
+                </div>
+    }
+}
+
+ReactDOM.render(
+    <Show />,
+    document.getElementById('root')
+);
+
 
