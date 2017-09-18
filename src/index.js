@@ -1,7 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-    <h1>Welcome to bitfumes.</h1>,
-    document.getElementById('root')
-);
+setInterval(function() {
+
+    let clock = function() {
+        return <h2>Time Now: { new Date().toLocaleTimeString() }</h2>
+    }
+
+    ReactDOM.render(
+        clock(),
+        document.getElementById('root')
+    );
+
+}, 1000);
+
